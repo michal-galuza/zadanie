@@ -106,22 +106,18 @@ export default function Add() {
 						key={item.name}
 						{...item}
 						{...formik.getFieldProps(item.name)}
-						error={
-							formik.touched[item.name] &&
-							formik.errors[item.name] &&
-							formik.errors[item.name]
-						}
-  />
+						error={formik.touched[item.name] && formik.errors[item.name]}
+					/>
 				))}
 
 				<Button
 					disabled={formik.isSubmitting}
 					additionalStyles={{ marginTop: "25px" }}
 					type="submit"
-  >
+				>
 					Submit
-  </Button>
-  </Form>
-  </LogicPageTemplate>
+				</Button>
+			</Form>
+		</LogicPageTemplate>
 	);
 }
